@@ -1,18 +1,14 @@
-from django.conf.urls import url, include
-
-from . import views
-from .views import IndexView, AnyPageView, ListView, PageView
+from django.conf.urls import url
+from .views import IndexView, AnyPageView
 
 
 app_name = 'stuff'
 
 urlpatterns = [
-    url(r'^$', IndexView.as_view()),
-    url(r'^(?P<pk>[0-9]+)/$', AnyPageView.as_view()),
-    url(r'^pages/$', views.ListView.as_view()),
-    url(r'^pages/(?P<id>[0-9]+)/$', PageView.as_view()),
+    url(r'^$', IndexView.as_view(), name='index'),
+    url(r'^(?P<pk>[0-9]+)/$', AnyPageView.as_view(), name='list'),
 ]
 
-#Modelo en el que poder editar datos desde Admin
+# Modelo en el que poder editar datos desde Admin
 
-#Datos no venir de views, si no base de datos.
+# Datos no venir de views, si no base de datos.

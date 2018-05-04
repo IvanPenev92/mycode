@@ -9,7 +9,3 @@ class PageAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Page, PageAdmin)
-
-
-#poner bootstrap; coger un template y probar que todo funciona bien
-
